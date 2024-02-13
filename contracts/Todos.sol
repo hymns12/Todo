@@ -38,6 +38,12 @@ contract Todos {
         _todo.isDone = !_todo.isDone;
 
     }
+
+    function deleteTodo(uint _index) external {
+        Todo memory todo = ArrayTodo[_index];
+        ArrayTodo.push(todo);
+        delete(ArrayTodo[_index]);
+    }
     
     
 }

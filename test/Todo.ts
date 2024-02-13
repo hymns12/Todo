@@ -17,10 +17,16 @@ describe("Making A Todo Of List", function() {
     it("Creating and updating Tod", async function () {
       const { todo } = await loadFixture(deployTodo);
 
-      await Todo.creatingTodo(string memory _list, string memory _add);
+      await Todo.creatingTodo(id, user, name, isDone);
       const name = await todo.getTodo();
 
-      expect(name).to.equal(string memory _list, string memory _add);
+      await Todo.upDataTodo();
+
+      await Todo.bollChackTodo();
+
+      await Todo.deleteTodo();
+
+      expect(name).to.equal();
     })
   })
 })

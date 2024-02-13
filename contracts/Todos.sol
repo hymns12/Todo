@@ -32,6 +32,12 @@ contract Todos {
         todo.id = _id;
         ArrayTodo.push(todo);
     }
+
+    function bollChackTodo(uint _index) external {
+        Todo storage _todo = ArrayTodo[_index];
+        _todo.isDone = !_todo.isDone;
+
+    }
     
     
 }

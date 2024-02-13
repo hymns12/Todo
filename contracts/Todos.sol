@@ -24,7 +24,14 @@ contract Todos {
         Todo storage todo = ArrayTodo[_index];
         return (todo.name, todo.id, todo.isDone, todo.user);
     }
-
+ 
+    function upDataTodo(uint _index, string memory _name, string memory _user, uint _id) external  {
+        Todo storage todo = ArrayTodo[_index];
+        todo.name = _name;
+        todo.user = _user;
+        todo.id = _id;
+        ArrayTodo.push(todo);
+    }
     
     
 }
